@@ -1,4 +1,4 @@
-name: Java CI
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -33,21 +33,32 @@ jobs:
       - name: Build with Maven
         run: mvn -B clean package --file pom.xml
 
+      - name: List contents of target directory (debugging)
+        run: ls -l target
+
       - name: Rename JAR File
         run: |
-          JAR_NAME=$(ls target/*.jar | head -n 1)
+          JAR_NAME=$(ls target/*.jar)
           echo "Renaming $JAR_NAME to my-project.jar"
           mv $JAR_NAME target/my-project.jar
 
-      - name: Create JAR directory in docs
+      - name: List contents of target directory after renaming (debugging)
+        run: ls -l target
+
+      - name: Create JAR directory
         run: mkdir -p docs/jar
+
+      - name: List contents of docs/jar directory (debugging)
+        run: ls -l docs/jar
 
       - name: Move JAR to docs directory
         run: mv target/my-project.jar docs/jar/
+
+      - name: List contents of docs/jar directory after moving JAR (debugging)
+        run: ls -l docs/jar
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.SECRET_GHTOKEN }}
           publish_dir: ./docs
-          publish_branch: gh-pages
