@@ -1,0 +1,49 @@
+make me an entire javafx programm, that is an advent calender with 24 "doors" where when you click one a window pops up with a little IT riddle
+
+make the riddle way shorter and show everything
+
+could you make the buttons more "christmasy"? And change the format to make it look prettier?
+
+now some buttons are cut off, could you make the format even better?
+
+no no i meant make the main stage have the right format and undo making the riddle a button
+
+whenever i push or make pull request it should make an executable jar file, can you make this in a main.yml in [project]/.github/workflow/main.yml through github actions
+
+is this possible to then include the file in github pages?
+
+name all prompts today...
+outcome:
+Assistance with GitHub Token:
+
+GITHUB_TOKEN
+
+what goes in the secret?
+
+no what do i write into the secret textbox?
+
+Personal Access Token Name:
+
+in this example what name was used for the token?
+
+my tokens name is SECRET_GHTOKEN
+
+Issues with JAR Artifact Creation:
+
+no artifact is created
+
+no artifact is made when pushing
+
+this is my pom.xml
+
+no you can change it if you then send me the entire code
+
+i did all that and it still doesnt work
+
+still no artifact
+
+Run mvn -B clean package --file pom.xml...
+
+Request for Perfect Instructions:
+
+what do i need to send you for you to tell me exactly what to do with 100% acuracy?
