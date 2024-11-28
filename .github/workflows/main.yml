@@ -60,6 +60,12 @@ jobs:
       - name: List contents of docs/jar directory after moving JAR (debugging)
         run: ls -l docs/jar
 
+      - name: Upload JAR Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-project-jar
+          path: target/my-project.jar
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
