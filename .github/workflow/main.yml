@@ -35,16 +35,11 @@ jobs:
 
       - name: Rename JAR File
         run: |
-          if ls target/*.jar > /dev/null 2>&1; then
-            JAR_NAME=$(ls target/*.jar | head -n 1)
-            echo "Renaming $JAR_NAME to my-project.jar"
-            mv $JAR_NAME target/my-project.jar
-          else
-            echo "No JAR file found in target directory."
-            exit 1
-          fi
+          JAR_NAME=$(ls target/*.jar | head -n 1)
+          echo "Renaming $JAR_NAME to my-project.jar"
+          mv $JAR_NAME target/my-project.jar
 
-      - name: Create JAR directory
+      - name: Create JAR directory in docs
         run: mkdir -p docs/jar
 
       - name: Move JAR to docs directory
