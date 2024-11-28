@@ -33,11 +33,16 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
+      - name: Rename JAR File
+        run: |
+          JAR_NAME=$(ls target/*.jar)
+          mv $JAR_NAME target/my-project.jar
+
       - name: Create JAR directory
         run: mkdir -p docs/jar
 
       - name: Move JAR to docs directory
-        run: mv target/*.jar docs/jar/
+        run: mv target/my-project.jar docs/jar/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
